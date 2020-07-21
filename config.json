@@ -1,0 +1,17 @@
+{
+    "pasta_imagens": "img",
+    "arquivo_saida": "sets.js",
+    "linguagem": "pt_br",
+    "conjuntos": [
+        { "nome": "Primordiais", "url": "https://dd.b.pvp.net/latest/set1-lite-{0}.zip", "pasta": "set1" },
+        { "nome": "Marés Crescentes", "url": "https://dd.b.pvp.net/latest/set2-lite-{0}.zip", "pasta": "set2" }
+    ],
+    "ids_ignorados": [
+        "01IO028T1",
+        "01IO028T2",
+        "01NX006T2",
+        "02BW008T01",
+        "02BW008T02",
+        "02IO006T3"
+    ]
+}

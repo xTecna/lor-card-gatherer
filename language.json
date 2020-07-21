@@ -1,0 +1,132 @@
+[
+	{
+		"linguagem": "de_de",
+		"propriedades":
+		{
+			"nome_ovonivia": "Einivia",
+    		"nome_unidade": "Einheit",
+    		"nome_campeao": "Champion",
+			"campeao_nivel_2": "(niveau 2)"
+		}
+	},
+	{
+		"linguagem": "en_us",
+		"propriedades":
+		{
+			"nome_ovonivia": "Eggnivia",
+    		"nome_unidade": "Unit",
+    		"nome_campeao": "Champion",
+			"campeao_nivel_2": "(level 2)"
+		}
+	},
+	{
+		"linguagem": "es_es",
+		"propriedades":
+		{
+			"nome_ovonivia": "Huevonivia",
+    		"nome_unidade": "Unidad",
+    		"nome_campeao": "Campeón",
+			"campeao_nivel_2": "(nivel 2)"
+		}
+	},
+	{
+		"linguagem": "es_mx",
+		"propriedades":
+		{
+			"nome_ovonivia": "Huenivia",
+    		"nome_unidade": "Unidad",
+    		"nome_campeao": "Campeón",
+			"campeao_nivel_2": "(nivel 2)"
+		}
+	},
+	{
+		"linguagem": "fr_fr",
+		"propriedades":
+		{
+			"nome_ovonivia": "Œuf d'Anivia",
+    		"nome_unidade": "Unité",
+    		"nome_campeao": "Champion",
+			"campeao_nivel_2": "(niveau 2)"
+		}
+	},
+	{
+		"linguagem": "it_it",
+		"propriedades":
+		{
+			"nome_ovonivia": "Anivia Uovo",
+    		"nome_unidade": "Unità",
+    		"nome_campeao": "Campione",
+			"campeao_nivel_2": "(livello 2)"
+		}
+	},
+	{
+		"linguagem": "ja_jp",
+		"propriedades":
+		{
+			"nome_ovonivia": "エッグニビア",
+    		"nome_unidade": "ユニット",
+    		"nome_campeao": "チャンピオン",
+			"campeao_nivel_2": "(レベル 2)"
+		}
+	},
+	{
+		"linguagem": "ko_kr",
+		"propriedades":
+		{
+			"nome_ovonivia": "얼음불사조 알",
+    		"nome_unidade": "유닛",
+    		"nome_campeao": "챔피언",
+			"campeao_nivel_2": "(수평 2)"
+		}
+	},
+	{
+		"linguagem": "pl_pl",
+		"propriedades":
+		{
+			"nome_ovonivia": "Aniviajo",
+    		"nome_unidade": "Jednostka",
+    		"nome_campeao": "Bohater",
+			"campeao_nivel_2": "(poziom 2)"
+		}
+	},
+	{
+		"linguagem": "pt_br",
+		"propriedades":
+		{
+			"nome_ovonivia": "Ovonivia",
+    		"nome_unidade": "Unidade",
+    		"nome_campeao": "Campeão",
+			"campeao_nivel_2": "(nível 2)"
+		}
+	},
+	{
+		"linguagem": "tr_tr",
+		"propriedades":
+		{
+			"nome_ovonivia": "Yumurtanivia",
+    		"nome_unidade": "Birim",
+    		"nome_campeao": "Şampiyon",
+			"campeao_nivel_2": "(seviye 2)"
+		}
+	},
+	{
+		"linguagem": "ru_ru",
+		"propriedades":
+		{
+			"nome_ovonivia": "Яйценивия",
+    		"nome_unidade": "Боец",
+    		"nome_campeao": "Чемпион",
+			"campeao_nivel_2": "(уровень 2)"
+		}
+	},
+	{
+		"linguagem": "zh_tw",
+		"propriedades":
+		{
+			"nome_ovonivia": "蛋妮維亞",
+    		"nome_unidade": "單位",
+    		"nome_campeao": "英雄",
+			"campeao_nivel_2": "(水平 2)"
+		}
+	}
+]
