@@ -37,10 +37,10 @@ class Configuracao:
         self.ids_ignorados = config['ids_ignorados']
     
     def arquivoDados(self, pasta_set):
-        return os.path.join(self.base, '__sets', '{0}-{1}'.format(pasta_set, self.linguagem), self.linguagem, 'data', '{0}-{1}.json'.format(pasta_set, self.linguagem))
+        return os.path.join(self.base, '__sets', pasta_set, self.linguagem, 'data', '{0}-{1}.json'.format(pasta_set, self.linguagem))
     
     def pastaImagens(self, pasta_set):
-        return os.path.join(self.base, '__sets', '{0}-{1}'.format(pasta_set, self.linguagem), self.linguagem, 'img', 'cards')
+        return os.path.join(self.base, '__sets', pasta_set, self.linguagem, 'img', 'cards')
 
 # Decide como (ou se) a carta vai ser registrada ou não no arquivo JSON
 def cadastrarCarta(carta):
@@ -76,7 +76,7 @@ for conjunto in conjuntos:
 
     # Extrai os arquivos em uma única pasta __sets, onde cada expansão vai ter sua própria pasta dentro dessa
     with ZipFile(arquivo_zip, 'r') as zipObj:
-        zipObj.extractall('__sets')
+        zipObj.extractall(os.path.join('__sets', conjunto.pasta))
     print('Extração do arquivo {0} concluída.'.format(arquivo_zip))
 
     # Exclui o arquivo ZIP pois a partir daqui não precisaremos mais dele
