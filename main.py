@@ -86,7 +86,7 @@ for conjunto in conjuntos:
     print 'Arquivos da expansão {0} baixados com sucesso, resultando no arquivo {1}.'.format(conjunto.nome, arquivo_zip)
 
     if (not os.path.isdir(caminho('__sets'))):
-	os.mkdir(caminho('__sets'))
+	os.mkdir(caminho('__sets'), 777)
 
     # Extrai os arquivos em uma única pasta __sets, onde cada expansão vai ter sua própria pasta dentro dessa
     with ZipFile(arquivo_zip, 'r') as zipObj:
@@ -120,7 +120,6 @@ for conjunto in conjuntos:
 # Converte todos os códigos para UTF-8 (etapa necessária apenas no Python 2.7+)
 for codigo in codigos:
 	codigo['name'] = codigo['name'].decode('utf-8')
-print codigos
 
 # Escreve todas as cartas obtidas no arquivo sets.json
 with io.open(configuracao.arquivo_saida, 'w', encoding='utf8') as saida:
