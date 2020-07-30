@@ -57,15 +57,17 @@ def caminho(arquivo):
 def cadastrarCarta(carta):
     nome = carta['name'].encode('utf-8')
     codigo = carta['cardCode']
+    tipo = carta['type'].encode('utf-8')
 
     if codigo in configuracao.ids_ignorados:
         return None
     
     if (carta['type'].encode('utf-8') == configuracao.nome_unidade) and (carta['supertype'].encode('utf-8') == configuracao.nome_campeao) and (carta['collectible'] == False):
+        tipo = carta['supertype'].encode('utf-8')
         if (carta['name'].encode('utf-8') != configuracao.nome_ovonivia):
             nome += ' {0}'.format(configuracao.campeao_nivel_2)
     
-    return { "name": nome, "cardCode": codigo }
+    return { "name": nome, "cardCode": codigo, "type": tipo }
 
 # O arquivo JSON config.json que vem junto com esse script é um arquivo que te permite customizar esse script como quiser
 with io.open(caminho('config.json'), 'r', encoding='utf-8') as arquivo_config:
@@ -120,6 +122,7 @@ for conjunto in conjuntos:
 # Converte todos os códigos para UTF-8 (etapa necessária apenas no Python 2.7+)
 for codigo in codigos:
 	codigo['name'] = codigo['name'].decode('utf-8')
+	codigo['type'] = codigo['type'].decode('utf-8')
 
 # Escreve todas as cartas obtidas no arquivo sets.json
 with io.open(configuracao.arquivo_saida, 'w', encoding='utf8') as saida:
