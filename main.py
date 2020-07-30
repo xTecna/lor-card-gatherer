@@ -62,12 +62,12 @@ def cadastrarCarta(carta):
     if codigo in configuracao.ids_ignorados:
         return None
     
-    if (carta['type'].encode('utf-8') == configuracao.nome_unidade) and (carta['supertype'].encode('utf-8') == configuracao.nome_campeao) and (carta['collectible'] == False):
+    if (carta['type'].encode('utf-8') == configuracao.nome_unidade) and (carta['supertype'].encode('utf-8') == configuracao.nome_campeao):
         tipo = carta['supertype'].encode('utf-8')
-        if (carta['name'].encode('utf-8') != configuracao.nome_ovonivia):
+        if (carta['collectible'] == False) and (carta['name'].encode('utf-8') != configuracao.nome_ovonivia):
             nome += ' {0}'.format(configuracao.campeao_nivel_2)
     
-    return { "name": nome, "cardCode": codigo, "type": tipo }
+	return { "name": nome, "cardCode": codigo, "type": tipo }
 
 # O arquivo JSON config.json que vem junto com esse script é um arquivo que te permite customizar esse script como quiser
 with io.open(caminho('config.json'), 'r', encoding='utf-8') as arquivo_config:
