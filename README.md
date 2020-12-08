@@ -1,7 +1,7 @@
 # LoR Card Gatherer / Coletor de Cartas de LoR
 
 
-A script that collect Legends of Runeterra cards and generates a file with their IDs and names.
+A script that collects Legends of Runeterra cards and generates a file with their IDs and names.
 
 You can customize in which folder the cards will be saved and which name you want for the file with IDs and names, besides the cards' language and the links to each set in the **config.json** file.
 
