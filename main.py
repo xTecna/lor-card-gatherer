@@ -1,133 +1,139 @@
 '''
-    Script para atualizar os dados e as imagens de todas as cartas do Legends of Runeterra
-    Esse script pode ser agendado para rodar toda data de patch/lançamento de expansão
-    Dessa forma, tudo é atualizado automaticamente com os dados personalizáveis através do arquivo config.json
+    Script to update all data and images from every card in Legends of Runeterra
+    This script can be scheduled to run every date before a patch or a set launch
+    This way, everything is updated with customized data through the config.json file
 '''
 
 from zipfile import ZipFile
 import urllib.request
 import shutil
+import codecs
 import json
 import sys
+import io
 import os
 
-# Classe para ajudar a lidar com os diferentes conjuntos de cartas
-class Conjunto:
-    def __init__(self, conjunto, linguagem):
-        self.nome = conjunto['nome']
-        self.url = conjunto['url'].format(linguagem)
-        self.pasta = conjunto['pasta']
+languages = [ "pt_br", "en_us", "es_es", "es_mx", "fr_fr", "it_it", "de_de", "ko_kr", "ja_jp", "pl_pl", "th_th", "tr_tr", "ru_ru", "zh_tw", "vi_vn" ]
 
-# Classe para ajudar a lidar com as pastas de cada ZIP, tendo funções para retornar onde está o arquivo JSON e onde está a pasta de imagens
-# Ela também lida com a informação de onde vão ficar a pasta de imagens e o arquivo JSON, com suporte a subpastas
-class Configuracao:
-    def __init__(self, config, config_linguagem):
+class CardSet:
+    def __init__(self, card_set, language):
+        self.name = card_set['name']
+        self.url = card_set['url'].format(language)
+        self.folder = card_set['folder']
+
+class Config:
+    def __init__(self, config, config_language, language):
         self.base = os.getcwd()
-        self.linguagem = config['linguagem']
-        propriedades = [x for x in config_linguagem if x['linguagem'] == self.linguagem][0]['propriedades']
+        self.language = language
+        properties = [x for x in config_language if x['language'] == self.language][0]['properties']
 
-        self.pasta_imagens = config['pasta_imagens']
-        self.arquivo_saida = config['arquivo_saida']
+        self.output_folder = config['output_folder']
+        self.root_images_folder = os.path.join(self.output_folder, config['images_folder'])
+        self.images_folder = os.path.join(self.root_images_folder, self.language)
+        self.output_file = os.path.join(self.output_folder, config['output_file'].format(self.language))
 
-        self.nome_ovonivia = propriedades['nome_ovonivia']
-        self.nome_unidade = propriedades['nome_unidade']
-        self.nome_campeao = propriedades['nome_campeao']
-        self.campeao_nivel_2 = propriedades['campeao_nivel_2']
+        self.types = {}
+        for (key, value) in properties['types'].items():
+            self.types[key] = value
+        self.champion_level_2 = properties['champion_level_2']
+        self.champion_level_3 = properties['champion_level_3']
 
-        self.ids_ignorados = config['ids_ignorados']
-    
-    def arquivoDados(self, pasta_set):
-        return os.path.join(self.base, '__sets', pasta_set, self.linguagem, 'data', '{0}-{1}.json'.format(pasta_set, self.linguagem))
-    
-    def pastaImagens(self, pasta_set):
-        return os.path.join(self.base, '__sets', pasta_set, self.linguagem, 'img', 'cards')
+        self.champions_without_level_2 = config['champions_without_level_2']
+        self.champions_with_level_3 = config['champions_with_level_3']
+        self.ignored_ids = config['ignored_ids']
 
-# Retorna o caminho dos arquivos config.json e config.language 
-# Prum caso muito específico onde você esteja rodando o script de um lugar que não é o mesmo onde está
-# o script, mas que todos os arquivos ainda estejam no mesmo lugar do script
-def caminho(arquivo):
-	return os.path.join(os.path.dirname(__file__), arquivo)
+    def dataFile(self, set_folder):
+        return os.path.join(self.base, '__sets', set_folder, self.language, 'data', '{0}-{1}.json'.format(set_folder, self.language))
 
-# Decide como (ou se) a carta vai ser registrada ou não no arquivo JSON
-def cadastrarCarta(carta):
-    nome = carta['name']
-    codigo = carta['cardCode']
+    def imagesFolder(self, set_folder):
+        return os.path.join(self.base, '__sets', set_folder, self.language, 'img', 'cards')
 
-    if codigo in configuracao.ids_ignorados:
+def getPath(file):
+	return os.path.join(os.path.dirname(__file__), file)
+
+def registerCard(card):
+    mana = card['cost']
+    name = card['name']
+    code = card['cardCode']
+    region = card['regionRef'].lower()
+    cardType = card['type']
+    supertype = card['supertype']
+    associatedCards = card['associatedCardRefs']
+
+    if code in config.ignored_ids:
         return None
     
-    if (carta['type'] == configuracao.nome_unidade) and (carta['supertype'] == configuracao.nome_campeao) and (carta['collectible'] == False):
-        if (carta['name'] != configuracao.nome_ovonivia):
-            nome += ' {0}'.format(configuracao.campeao_nivel_2)
+    if (config.types.get(cardType) == 'follower') and (config.types.get(supertype) == 'champion'):
+        cardType = supertype
+        if (card['collectible'] == False):
+            if (not code in config.champions_without_level_2):
+                if (code in config.champions_with_level_3):
+                    name += ' {0}'.format(config.champion_level_3)
+                else:
+                    name += ' {0}'.format(config.champion_level_2)
     
-    return { "name": nome, "cardCode": codigo }
+    return { "name": name, "mana": mana, "cardCode": code, "region": region, "type": config.types.get(cardType, ''), "associatedCards": associatedCards }
 
-# O arquivo JSON config.json que vem junto com esse script é um arquivo que te permite customizar esse script como quiser
-with open(caminho('config.json'), 'r', encoding='utf8') as arquivo_config:
-    config = json.load(arquivo_config)
-    with open (caminho('language.json'), 'r', encoding='utf8') as arquivo_linguagem:
-        config_linguagem = json.load(arquivo_linguagem)
-        configuracao = Configuracao(config, config_linguagem)
-        conjuntos = [Conjunto(conjunto, configuracao.linguagem) for conjunto in config['conjuntos']]
+for language in languages:
+    with io.open(getPath('config.json'), 'r', encoding='utf-8') as file_config:
+        config_file = json.load(file_config)
+        with io.open(getPath('language.json'), 'r', encoding='utf-8') as file_language:
+            config_language = json.load(file_language)
+            config = Config(config_file, config_language, language)
+            card_sets = [CardSet(card_set, config.language) for card_set in config_file['card_sets']]
+    
+    codes = []
+    
+    for card_set in card_sets:
+        print('Downloading files from set {0} in language {1}. This step may take some minutes.'.format(card_set.name, config.language))
+        file_zip = getPath('{0}.zip'.format(card_set.folder))
+    
+        urllib.request.urlretrieve(card_set.url, file_zip)
+        print('Files from set {0} downloaded successfully, resulting in file {1}.'.format(card_set.name, file_zip))
+    
+        if (not os.path.isdir(getPath('__sets'))):
+    	    os.mkdir(getPath('__sets'), 777)
+    
+        with ZipFile(file_zip, 'r') as zipObj:
+            zipObj.extractall(os.path.join(config.base, '__sets', card_set.folder))
+        print('Extraction of {0} finished.'.format(file_zip))
+    
+        os.remove(file_zip)
+    
+        with io.open(config.dataFile(card_set.folder), 'r', encoding='utf8') as file_json:
+            fileData = json.load(file_json)
+            for data in fileData:
+                card = registerCard(data)
+                if card != None:
+                    codes.append(card)
+        print('Data from cards from set {0} obtained.'.format(card_set.name))
+    
+        if (not os.path.isdir(config.root_images_folder)):
+            os.mkdir(config.root_images_folder)
+        if (not os.path.isdir(config.images_folder)):
+            os.mkdir(config.images_folder)
+    
+        images = os.listdir(config.imagesFolder(card_set.folder))
+        for image in images:
+            output = os.path.join(config.imagesFolder(card_set.folder), image)
+            outputPath = os.path.join(config.images_folder, image)
+            shutil.move(output, outputPath)
+        print('All card images from set {0} were transferred to folder {1}.'.format(card_set.name, config.images_folder))
+        
+    with io.open(config.output_file, 'w', encoding='utf8') as output:
+        output.write(json.dumps(codes, ensure_ascii=False))
+    
+    shutil.rmtree(getPath('__sets'), ignore_errors=True)
+    
+    for ignored in config.ignored_ids:
+        toBeRemoved = os.path.join(config.images_folder, '{0}.png'.format(ignored))
+        os.remove(toBeRemoved)
+        print('{0}.png removed'.format(ignored))
+    images = os.listdir(config.images_folder)
+    for image in images:
+        if '-alt' in image:
+            toBeRemoved = os.path.join(config.images_folder, image)
+            os.remove(toBeRemoved)
+            print('{0}.png removed'.format(image))
 
-codigos = []
-
-for conjunto in conjuntos:
-    print('Baixando os arquivos das cartas da expansão {0}. Essa etapa pode demorar um pouco.'.format(conjunto.nome))
-    arquivo_zip = caminho('{0}.zip'.format(conjunto.pasta))
-
-    # Vai lá no link e faz download do arquivo (é sério, é só essa linha mesmo)
-    urllib.request.urlretrieve(conjunto.url, arquivo_zip)
-    print('Arquivos da expansão {0} baixados com sucesso, resultando no arquivo {1}.'.format(conjunto.nome, arquivo_zip))
-
-    if (not os.path.mkdir(caminho('__sets'))):
-	    os.mkdir(caminho('__sets'))
-
-    # Extrai os arquivos em uma única pasta __sets, onde cada expansão vai ter sua própria pasta dentro dessa
-    with ZipFile(arquivo_zip, 'r') as zipObj:
-        zipObj.extractall(os.path.join('__sets', conjunto.pasta))
-    print('Extração do arquivo {0} concluída.'.format(arquivo_zip))
-
-    # Exclui o arquivo ZIP pois a partir daqui não precisaremos mais dele
-    os.remove(arquivo_zip)
-
-    # Acessa o arquivo JSON dentro da pasta da expansão a fim de pegar a relação de nome com o ID de cada carta
-    with open(configuracao.arquivoDados(conjunto.pasta), 'r', encoding='utf8') as arquivo_json:
-        dados = json.load(arquivo_json)
-        for dado in dados:
-            carta = cadastrarCarta(dado)
-            if carta != None:
-                codigos.append(carta)
-    print('Informações das cartas da expansão {0} obtidas.'.format(conjunto.nome))
-
-    # Verifica se existe a pasta de imagens e se não existir, cria uma
-    if (not os.path.isdir(configuracao.pasta_imagens)):
-        os.mkdir(configuracao.pasta_imagens)
-
-    # Transfere todas as imagens da pasta img para uma pasta única onde vai ficar as imagens das cartas de todas as expansões
-    imagens = os.listdir(configuracao.pastaImagens(conjunto.pasta))
-    for imagem in imagens:
-        saida = os.path.join(configuracao.pastaImagens(conjunto.pasta), imagem)
-        destino = os.path.join(configuracao.pasta_imagens, imagem)
-        shutil.move(saida, destino)
-    print('Todas as imagens das cartas da expansão {0} foram passadas para a pasta {1}.'.format(conjunto.nome, configuracao.pasta_imagens))
-
-# Escreve todas as cartas obtidas no arquivo sets.json
-with open(configuracao.arquivo_saida, 'w', encoding='utf8') as saida:
-    json.dump(codigos, saida, ensure_ascii=False)
-
-# Exclui a pasta __sets pois não precisaremos mais dela
-shutil.rmtree(caminho('__sets'), ignore_errors=True)
-
-# Excluindo imagens desnecessárias (as imagens das cartas que foram ignoradas, ou seja, as que estão em ids_ignorados e artes alternativas)
-for ignorado in configuracao.ids_ignorados:
-    print('{0}.png removido'.format(ignorado))
-    remocao = os.path.join(configuracao.pasta_imagens, '{0}.png'.format(ignorado))
-    os.remove(remocao)
-imagens = os.listdir(configuracao.pasta_imagens)
-for imagem in imagens:
-    if '-alt' in imagem:
-        remocao = os.path.join(configuracao.pasta_imagens, imagem)
-        os.remove(remocao)
-
-print('O script terminou de executar com sucesso. Todos os dados podem ser encontrados no arquivo {0}. Todas as imagens das cartas estão na pasta {1}.'.format(configuracao.arquivo_saida, configuracao.pasta_imagens))
+print('The script finished sucessfully. All data can be found at file {0}. All card images are at folder {1}.'.format(config.output_file, config.images_folder))
