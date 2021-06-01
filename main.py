@@ -13,127 +13,119 @@ import sys
 import io
 import os
 
-languages = [ "pt_br", "en_us", "es_es", "es_mx", "fr_fr", "it_it", "de_de", "ko_kr", "ja_jp", "pl_pl", "th_th", "tr_tr", "ru_ru", "zh_tw", "vi_vn" ]
+card_data = []
 
 class CardSet:
-    def __init__(self, card_set, language):
+    def __init__(self, images_folder, card_set, language):
         self.name = card_set['name']
         self.url = card_set['url'].format(language)
         self.folder = card_set['folder']
+        self.language = language
+
+        self.images_path = os.path.join(os.path.dirname(__file__), self.folder, self.language, 'img', 'cards')
+        self.file_path = os.path.join(os.path.dirname(__file__), self.folder, self.language, 'data', '{0}-{1}.json'.format(self.folder, self.language))
+        self.output_folder = os.path.join(images_folder, self.language)
 
 class Config:
-    def __init__(self, config, config_language, language):
-        self.base = os.getcwd()
-        self.language = language
-        properties = [x for x in config_language if x['language'] == self.language][0]['properties']
-
+    def __init__(self, config, config_language, config_champion_names):
         self.output_folder = config['output_folder']
-        self.root_images_folder = os.path.join(self.output_folder, config['images_folder'])
-        self.images_folder = os.path.join(self.root_images_folder, self.language)
-        self.output_file = os.path.join(self.output_folder, config['output_file'].format(self.language))
+        self.images_folder = os.path.join(self.output_folder, config['images_folder'])
+        self.output_file = os.path.join(self.output_folder, config['output_file'])
 
-        self.types = {}
-        for (key, value) in properties['types'].items():
-            self.types[key] = value
-        self.champion_level_2 = properties['champion_level_2']
-        self.champion_level_3 = properties['champion_level_3']
-
-        self.champions_without_level_2 = config['champions_without_level_2']
-        self.champions_with_level_3 = config['champions_with_level_3']
-        self.ignored_ids = config['ignored_ids']
-
-    def dataFile(self, set_folder):
-        return os.path.join(self.base, '__sets', set_folder, self.language, 'data', '{0}-{1}.json'.format(set_folder, self.language))
-
-    def imagesFolder(self, set_folder):
-        return os.path.join(self.base, '__sets', set_folder, self.language, 'img', 'cards')
+        self.card_sets = config['card_sets']
+        self.dictionary = config_language
+        self.champion_names = config_champion_names
 
 def getPath(file):
 	return os.path.join(os.path.dirname(__file__), file)
 
-def registerCard(card):
-    mana = card['cost']
-    name = card['name']
-    code = card['cardCode']
-    region = card['regionRef'].lower()
-    cardType = card['type']
-    supertype = card['supertype']
-    associatedCards = card['associatedCardRefs']
+def setConfig():
+    config = None
 
-    if code in config.ignored_ids:
-        return None
-    
-    if (config.types.get(cardType) == 'follower') and (config.types.get(supertype) == 'champion'):
-        cardType = supertype
-        if (card['collectible'] == False):
-            if (not code in config.champions_without_level_2):
-                if (code in config.champions_with_level_3):
-                    name += ' {0}'.format(config.champion_level_3)
-                else:
-                    name += ' {0}'.format(config.champion_level_2)
-    
-    return { "name": name, "mana": mana, "cardCode": code, "region": region, "type": config.types.get(cardType, ''), "associatedCards": associatedCards }
-
-for language in languages:
     with io.open(getPath('config.json'), 'r', encoding='utf-8') as file_config:
         config_file = json.load(file_config)
         with io.open(getPath('language.json'), 'r', encoding='utf-8') as file_language:
             config_language = json.load(file_language)
-            config = Config(config_file, config_language, language)
-            card_sets = [CardSet(card_set, config.language) for card_set in config_file['card_sets']]
+            with io.open(getPath('champion_names.json'), 'r', encoding='utf-8') as file_champion_names:
+                config_champion_names = json.load(file_champion_names)
+                config = Config(config_file, config_language, config_champion_names)
+
+    return config
+
+def getDataFromCardSet(card_set, dictionary, champion_names):
+    file_zip = getPath('{0}.zip'.format(card_set.folder))
     
-    codes = []
+    urllib.request.urlretrieve(card_set.url, file_zip)
+    print('Files from set {0} downloaded successfully, resulting in file {1}.'.format(card_set.name, file_zip))
     
-    for card_set in card_sets:
-        print('Downloading files from set {0} in language {1}. This step may take some minutes.'.format(card_set.name, config.language))
-        file_zip = getPath('{0}.zip'.format(card_set.folder))
+    with ZipFile(file_zip, 'r') as zipObj:
+        zipObj.extractall(getPath(card_set.folder))
+    print('Extraction of {0} finished.'.format(file_zip))
     
-        urllib.request.urlretrieve(card_set.url, file_zip)
-        print('Files from set {0} downloaded successfully, resulting in file {1}.'.format(card_set.name, file_zip))
+    os.remove(file_zip)
     
-        if (not os.path.isdir(getPath('__sets'))):
-    	    os.mkdir(getPath('__sets'), 777)
+    with io.open(card_set.file_path, 'r', encoding='utf8') as file_json:
+        fileData = json.load(file_json)
+        for data in fileData:
+            card_data.append(registerCard(dictionary, champion_names, data))
+    print('Data from cards from set {0} obtained.'.format(card_set.name))
     
-        with ZipFile(file_zip, 'r') as zipObj:
-            zipObj.extractall(os.path.join(config.base, '__sets', card_set.folder))
-        print('Extraction of {0} finished.'.format(file_zip))
+    if (not os.path.isdir(card_set.output_folder)):
+        os.mkdir(card_set.output_folder)
     
-        os.remove(file_zip)
-    
-        with io.open(config.dataFile(card_set.folder), 'r', encoding='utf8') as file_json:
-            fileData = json.load(file_json)
-            for data in fileData:
-                card = registerCard(data)
-                if card != None:
-                    codes.append(card)
-        print('Data from cards from set {0} obtained.'.format(card_set.name))
-    
-        if (not os.path.isdir(config.root_images_folder)):
-            os.mkdir(config.root_images_folder)
-        if (not os.path.isdir(config.images_folder)):
-            os.mkdir(config.images_folder)
-    
-        images = os.listdir(config.imagesFolder(card_set.folder))
-        for image in images:
-            output = os.path.join(config.imagesFolder(card_set.folder), image)
-            outputPath = os.path.join(config.images_folder, image)
-            shutil.move(output, outputPath)
-        print('All card images from set {0} were transferred to folder {1}.'.format(card_set.name, config.images_folder))
-        
-    with io.open(config.output_file, 'w', encoding='utf8') as output:
-        output.write(json.dumps(codes, ensure_ascii=False))
-    
-    shutil.rmtree(getPath('__sets'), ignore_errors=True)
-    
-    for ignored in config.ignored_ids:
-        toBeRemoved = os.path.join(config.images_folder, '{0}.png'.format(ignored))
-        os.remove(toBeRemoved)
-        print('{0}.png removed'.format(ignored))
-    images = os.listdir(config.images_folder)
+    images = os.listdir(card_set.images_path)
     for image in images:
-        if '-alt' in image:
-            toBeRemoved = os.path.join(config.images_folder, image)
-            os.remove(toBeRemoved)
-            print('{0}.png removed'.format(image))
+        source = os.path.join(card_set.images_path, image)
+        destination = os.path.join(card_set.output_folder, image)
+        shutil.move(source, destination)
+    print('All card images from set {0} were transferred to folder {1}.'.format(card_set.name, card_set.output_folder))
+
+    shutil.rmtree(card_set.folder, ignore_errors=True)
+
+def registerCard(dictionary, champion_names, card):
+    nameRef = champion_names[card['cardCode']] if card['cardCode'] in champion_names else ''
+    subtypes = [dictionary['subtypes'][x] for x in card['subtypes']]
+    supertype = dictionary['types'][card['supertype']] if card['supertype'] != '' else ''
+    cardType = dictionary['types'][card['type']]
+
+    return {
+        'associatedCards': card['associatedCardRefs'],
+        'artPath': [x['gameAbsolutePath'] for x in card['assets']],
+        'fullArtPath': [x['fullAbsolutePath'] for x in card['assets']],
+        'region': card['regionRef'].lower(),
+        'attack': card['attack'],
+        'cost': card['cost'],
+        'health': card['health'],
+        'description': card['descriptionRaw'],
+        'levelupDescription': card['levelupDescriptionRaw'],
+        'flavorText': card['flavorText'],
+        'artistName': card['artistName'],
+        'name': card['name'],
+        'nameRef': nameRef,
+        'cardCode': card['cardCode'],
+        'keywords': [x.lower() for x in card['keywordRefs']],
+        'spellSpeed': card['spellSpeedRef'].lower(),
+        'rarity': card['rarityRef'].lower(),
+        'subtypes': subtypes,
+        'supertype': supertype,
+        'type': cardType,
+        'collectible': card['collectible'],
+        'set': card['set']
+    }
+
+config = setConfig()
+if (not os.path.isdir(config.images_folder)):
+    os.mkdir(config.images_folder)
+for language in config.dictionary:
+    card_data = []
+    card_set_object = None
+    for card_set in config.card_sets:
+        card_set_object = CardSet(config.images_folder, card_set, language)
+        print('Downloading files from set {0} in language {1}. This step may take some minutes.'.format(card_set_object.name, language))
+        getDataFromCardSet(card_set_object, config.dictionary[language], config.champion_names)
+    output_file = config.output_file.format(language)
+    with io.open(output_file, 'w', encoding='utf8') as output:
+        output.write(json.dumps(card_data, ensure_ascii=False))
+    print('All data collected from set {0} in language {1}.'.format(card_set_object.name, language))
 
 print('The script finished sucessfully. All data can be found at file {0}. All card images are at folder {1}.'.format(config.output_file, config.images_folder))

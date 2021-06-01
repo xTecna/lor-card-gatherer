@@ -1,212 +1,362 @@
-[
-  {
-    "language": "de_de",
-    "properties": {
-      "types": {
-        "Champion": "champion",
-        "Einheit": "follower",
-        "Zauber": "spell",
-        "Wahrzeichen": "landmark",
-        "Fertigkeit": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+{
+  "de_de": {
+    "types": {
+      "Champion": "champion",
+      "Einheit": "follower",
+      "Zauber": "spell",
+      "Wahrzeichen": "landmark",
+      "Fertigkeit": "skill",
+      "Falle": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRACHE": "dragon",
+      "SPINNE": "spider",
+      "ELITE": "elite",
+      "TECHNOLOGIE": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "SEEUNGEHEUER": "seamonster",
+      "SCHATZ": "treasure",
+      "HIMMLISCH": "celestial",
+      "MONDWAFFE": "moonweapon",
+      "AUFGESTIEGEN": "ascended"
     }
   },
-  {
-    "language": "en_us",
-    "properties": {
-      "types": {
-        "Champion": "champion",
-        "Unit": "follower",
-        "Spell": "spell",
-        "Landmark": "landmark",
-        "Ability": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "en_us": {
+    "types": {
+      "Champion": "champion",
+      "Unit": "follower",
+      "Spell": "spell",
+      "Landmark": "landmark",
+      "Ability": "skill",
+      "Trap": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGON": "dragon",
+      "SPIDER": "spider",
+      "ELITE": "elite",
+      "TECH": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "SEA MONSTER": "seamonster",
+      "TREASURE": "treasure",
+      "CELESTIAL": "celestial",
+      "MOON WEAPON": "moonweapon",
+      "ASCENDED": "ascended"
     }
   },
-  {
-    "language": "es_es",
-    "properties": {
-      "types": {
-        "Campeón": "champion",
-        "Unidad": "follower",
-        "Hechizo": "spell",
-        "Hito": "landmark",
-        "Habilidad": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "es_es": {
+    "types": {
+      "Campeón": "champion",
+      "Unidad": "follower",
+      "Hechizo": "spell",
+      "Hito": "landmark",
+      "Habilidad": "skill",
+      "Trampa": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGÓN": "dragon",
+      "ARAÑA": "spider",
+      "ÉLITE": "elite",
+      "TECNOLOGÍA": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "MONSTRUO MARINO": "seamonster",
+      "TESORO": "treasure",
+      "CELESTIAL": "celestial",
+      "ARMA LUNAR": "moonweapon",
+      "ASCENDIDO": "ascended"
     }
   },
-  {
-    "language": "es_mx",
-    "properties": {
-      "types": {
-        "Campeón": "champion",
-        "Unidad": "follower",
-        "Hechizo": "spell",
-        "Hito": "landmark",
-        "Habilidad": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "es_mx": {
+    "types": {
+      "Campeón": "champion",
+      "Unidad": "follower",
+      "Hechizo": "spell",
+      "Hito": "landmark",
+      "Habilidad": "skill",
+      "Trampa": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGÓN": "dragon",
+      "ARAÑA": "spider",
+      "ÉLITE": "elite",
+      "TECNOLOGÍA": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "MONSTRUO MARINO": "seamonster",
+      "TESORO": "treasure",
+      "CELESTIAL": "celestial",
+      "ARMA LUNAR": "moonweapon",
+      "ASCENDIDO": "ascended"
     }
   },
-  {
-    "language": "fr_fr",
-    "properties": {
-      "types": {
-        "Champion": "champion",
-        "Unité": "follower",
-        "Sort": "spell",
-        "Site": "landmark",
-        "Compétence": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "fr_fr": {
+    "types": {
+      "Champion": "champion",
+      "Unité": "follower",
+      "Sort": "spell",
+      "Site": "landmark",
+      "Compétence": "skill",
+      "Piège": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGON": "dragon",
+      "ARAIGNÉE": "spider",
+      "ÉLITE": "elite",
+      "TECHNOLOGIE": "tech",
+      "YÉTI": "yeti",
+      "ELNUK": "elnuk",
+      "MONSTRE MARIN": "seamonster",
+      "TRÉSOR": "treasure",
+      "CÉLESTE": "celestial",
+      "ARME LUNAIRE": "moonweapon",
+      "TRANSFIGURÉ": "ascended"
     }
   },
-  {
-    "language": "it_it",
-    "properties": {
-      "types": {
-        "Campione": "champion",
-        "Unità": "follower",
-        "Incantesimo": "spell",
-        "Monumento": "landmark",
-        "Abilità": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "it_it": {
+    "types": {
+      "Campione": "champion",
+      "Unità": "follower",
+      "Incantesimo": "spell",
+      "Monumento": "landmark",
+      "Abilità": "skill",
+      "Trappola": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGO": "dragon",
+      "RAGNO": "spider",
+      "ÉLITE": "elite",
+      "TECNOLOGIA": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "MOSTRO MARINO": "seamonster",
+      "TESORO": "treasure",
+      "CELESTIALE": "celestial",
+      "ARMA LUNARE": "moonweapon",
+      "ASCESO": "ascended"
     }
   },
-  {
-    "language": "ja_jp",
-    "properties": {
-      "types": {
-        "チャンピオン": "champion",
-        "ユニット": "follower",
-        "スペル": "spell",
-        "ランドマーク": "landmark",
-        "能力": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "ja_jp": {
+    "types": {
+      "チャンピオン": "champion",
+      "ユニット": "follower",
+      "スペル": "spell",
+      "ランドマーク": "landmark",
+      "スキル": "skill",
+      "トラップ": "trap"
+    },
+    "subtypes": {
+      "ポロ": "poro",
+      "ドラゴン": "dragon",
+      "蜘蛛": "spider",
+      "精鋭": "elite",
+      "テック": "tech",
+      "イエティ": "yeti",
+      "エルヌック": "elnuk",
+      "海獣": "seamonster",
+      "トレジャー": "treasure",
+      "天空": "celestial",
+      "月授の武器": "moonweapon",
+      "超越者": "ascended"
     }
   },
-  {
-    "language": "ko_kr",
-    "properties": {
-      "types": {
-        "챔피언": "champion",
-        "유닛": "follower",
-        "주문": "spell",
-        "명소": "landmark",
-        "스킬": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "ko_kr": {
+    "types": {
+      "챔피언": "champion",
+      "유닛": "follower",
+      "주문": "spell",
+      "명소": "landmark",
+      "스킬": "skill",
+      "함정": "trap"
+    },
+    "subtypes": {
+      "포로": "poro",
+      "용": "dragon",
+      "거미": "spider",
+      "정예": "elite",
+      "공학": "tech",
+      "설인": "yeti",
+      "엘누크": "elnuk",
+      "바다괴물": "seamonster",
+      "보물": "treasure",
+      "천상": "celestial",
+      "달 무기": "moonweapon",
+      "초월체": "ascended"
     }
   },
-  {
-    "language": "pl_pl",
-    "properties": {
-      "types": {
-        "Bohater": "champion",
-        "Jednostka": "follower",
-        "Zaklęcie": "spell",
-        "Lokacja": "landmark",
-        "Umiejętność": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "pl_pl": {
+    "types": {
+      "Bohater": "champion",
+      "Jednostka": "follower",
+      "Zaklęcie": "spell",
+      "Lokacja": "landmark",
+      "Umiejętność": "skill",
+      "Pułapka": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "SMOK": "dragon",
+      "PAJĄK": "spider",
+      "ELITARNY": "elite",
+      "MASZYNA": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "POTWÓR MORSKI": "seamonster",
+      "SKARB": "treasure",
+      "ASTRALNY": "celestial",
+      "KSIĘŻYCOWA BROŃ": "moonweapon",
+      "WYNIESIENI": "ascended"
     }
   },
-  {
-    "language": "pt_br",
-    "properties": {
-      "types": {
-        "Campeão": "champion",
-        "Unidade": "follower",
-        "Feitiço": "spell",
-        "Monumento": "landmark",
-        "Habilidade": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "pt_br": {
+    "types": {
+      "Campeão": "champion",
+      "Unidade": "follower",
+      "Feitiço": "spell",
+      "Monumento": "landmark",
+      "Habilidade": "skill",
+      "Armadilha": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "DRAGÃO": "dragon",
+      "ARANHA": "spider",
+      "ELITE": "elite",
+      "TECNOLÓGICO": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "MONSTRO MARINHO": "seamonster",
+      "TESOURO": "treasure",
+      "CELESTIAL": "celestial",
+      "ARMA LUNARI": "moonweapon",
+      "ASCENDENTE": "ascended"
     }
   },
-  {
-    "language": "th_th",
-    "properties": {
-      "types": {
-        "แชมเปี้ยน": "champion",
-        "ยูนิต": "follower",
-        "เวท": "spell",
-        "แลนด์มาร์ค": "landmark",
-        "ความสามารถ": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "ru_ru": {
+    "types": {
+      "Чемпион": "champion",
+      "Боец": "follower",
+      "Заклинание": "spell",
+      "Место силы": "landmark",
+      "Способность": "skill",
+      "Ловушка": "trap"
+    },
+    "subtypes": {
+      "ПОРО": "poro",
+      "ДРАКОН": "dragon",
+      "ПАУК": "spider",
+      "ЭЛИТА": "elite",
+      "ТЕХНИКА": "tech",
+      "ЙЕТИ": "yeti",
+      "ЭЛНУК": "elnuk",
+      "МОРСКОЕ ЧУДОВИЩЕ": "seamonster",
+      "СОКРОВИЩЕ": "treasure",
+      "ТВОРЕНИЕ НЕБЕС": "celestial",
+      "ЛУННОЕ ОРУЖИЕ": "moonweapon",
+      "ВОЗНЕСШИЕСЯ": "ascended"
     }
   },
-  {
-    "language": "tr_tr",
-    "properties": {
-      "types": {
-        "Şampiyon": "champion",
-        "Birim": "follower",
-        "Büyü": "spell",
-        "Yer": "landmark",
-        "Yetenek": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "th_th": {
+    "types": {
+      "แชมเปี้ยน": "champion",
+      "ยูนิต": "follower",
+      "เวท": "spell",
+      "แลนด์มาร์ค": "landmark",
+      "ความสามารถ": "skill",
+      "กับดัก": "trap"
+    },
+    "subtypes": {
+      "โปโร": "poro",
+      "มังกร": "dragon",
+      "แมงมุม": "spider",
+      "ทหารชั้นยอด": "elite",
+      "เทคโนโลยี": "tech",
+      "เยติ": "yeti",
+      "เอลนูค": "elnuk",
+      "สัตว์ใต้ท้องทะเล": "seamonster",
+      "ขุมทรัพย์": "treasure",
+      "สรวงสวรรค์": "celestial",
+      "อาวุธจันทรา": "moonweapon",
+      "พลังเทพ": "ascended"
     }
   },
-  {
-    "language": "ru_ru",
-    "properties": {
-      "types": {
-        "Чемпион": "champion",
-        "Боец": "follower",
-        "Заклинание": "spell",
-        "Место силы": "landmark",
-        "Способность": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "tr_tr": {
+    "types": {
+      "Şampiyon": "champion",
+      "Birim": "follower",
+      "Büyü": "spell",
+      "Yer": "landmark",
+      "Yetenek": "skill",
+      "Tuzak": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "EJDER": "dragon",
+      "ÖRÜMCEK": "spider",
+      "SEÇKİN": "elite",
+      "TEKNOLOJİK": "tech",
+      "YETİ": "yeti",
+      "ELNÜK": "elnuk",
+      "DENİZ CANAVARI": "seamonster",
+      "HAZİNE": "treasure",
+      "SEMAVİ": "celestial",
+      "AY SİLAHI": "moonweapon",
+      "YÜKSELMİŞ": "ascended"
     }
   },
-  {
-    "language": "zh_tw",
-    "properties": {
-      "types": {
-        "英雄": "champion",
-        "單位": "follower",
-        "法術": "spell",
-        "地標": "landmark",
-        "技能": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "vi_vn": {
+    "types": {
+      "Anh hùng": "champion",
+      "Bài quân": "follower",
+      "Bài phép": "spell",
+      "Địa Danh": "landmark",
+      "Kỹ năng": "skill",
+      "Bài Bẫy": "trap"
+    },
+    "subtypes": {
+      "PORO": "poro",
+      "RỒNG": "dragon",
+      "NHỆN": "spider",
+      "TINH NHUỆ": "elite",
+      "CÔNG NGHỆ": "tech",
+      "YETI": "yeti",
+      "ELNUK": "elnuk",
+      "QUÁI VẬT BIỂN": "seamonster",
+      "KHO BÁU": "treasure",
+      "THƯỢNG GIỚI": "celestial",
+      "VŨ KHÍ NGUYỆT THẠCH": "moonweapon",
+      "THỂ THĂNG HOA": "ascended"
     }
   },
-  {
-    "language": "vi_vn",
-    "properties": {
-      "types": {
-        "Anh hùng": "champion",
-        "Bài quân": "follower",
-        "Bài phép": "spell",
-        "Địa Danh": "landmark",
-        "Kỹ năng": "skill"
-      },
-      "champion_level_2": "(nível 2)",
-      "champion_level_3": "(nível 3)"
+  "zh_tw": {
+    "types": {
+      "英雄": "champion",
+      "單位": "follower",
+      "法術": "spell",
+      "地標": "landmark",
+      "技能": "skill",
+      "陷阱": "trap"
+    },
+    "subtypes": {
+      "普羅": "poro",
+      "龍族": "dragon",
+      "蜘蛛": "spider",
+      "菁英": "elite",
+      "機械": "tech",
+      "雪怪": "yeti",
+      "厄努克": "elnuk",
+      "海怪": "seamonster",
+      "寳藏": "treasure",
+      "天界": "celestial",
+      "月之武器": "moonweapon",
+      "飛昇者": "ascended"
     }
   }
-]
+}

@@ -1,7 +1,7 @@
 {
-  "output_folder": "D:\\Usuários\\Raquel\\Documentos\\Workspace\\lor-card-gatherer\\cards",
+  "output_folder": "[FULL PATH]",
   "images_folder": "img",
-  "output_file": "sets_{0}.js",
+  "output_file": "{0}.json",
   "card_sets": [
     {
       "name": "Foundations",
@@ -23,14 +23,5 @@
       "url": "https://dd.b.pvp.net/latest/set4-lite-{0}.zip",
       "folder": "set4"
     }
-  ],
-  "champions_without_level_2": ["01FR024T4", "01SI053T2", "03DE011T1"],
-  "champions_with_level_3": ["04SH067T1", "04SH047T2", "04SH003T3"],
-  "ignored_ids": [
-    "01IO028T1",
-    "01IO028T2",
-    "01NX006T2",
-    "02BW008T01",
-    "02BW008T02"
   ]
 }
