@@ -110,7 +110,7 @@ def registerCard(dictionary, champion_names, card):
         'supertype': supertype,
         'type': cardType,
         'collectible': card['collectible'],
-        'set': card['set']
+        'set': card['set'].lower()
     }
 
 config = setConfig()
