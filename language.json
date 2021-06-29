@@ -20,7 +20,8 @@
       "SCHATZ": "treasure",
       "HIMMLISCH": "celestial",
       "MONDWAFFE": "moonweapon",
-      "AUFGESTIEGEN": "ascended"
+      "AUFGESTIEGEN": "ascended",
+      "LAUERND": "lurker"
     }
   },
   "en_us": {
@@ -44,7 +45,8 @@
       "TREASURE": "treasure",
       "CELESTIAL": "celestial",
       "MOON WEAPON": "moonweapon",
-      "ASCENDED": "ascended"
+      "ASCENDED": "ascended",
+      "LURKER": "lurker"
     }
   },
   "es_es": {
@@ -68,7 +70,8 @@
       "TESORO": "treasure",
       "CELESTIAL": "celestial",
       "ARMA LUNAR": "moonweapon",
-      "ASCENDIDO": "ascended"
+      "ASCENDIDO": "ascended",
+      "ACECHANTE": "lurker"
     }
   },
   "es_mx": {
@@ -92,7 +95,8 @@
       "TESORO": "treasure",
       "CELESTIAL": "celestial",
       "ARMA LUNAR": "moonweapon",
-      "ASCENDIDO": "ascended"
+      "ASCENDIDO": "ascended",
+      "ACECHANTE": "lurker"
     }
   },
   "fr_fr": {
@@ -116,7 +120,8 @@
       "TRÉSOR": "treasure",
       "CÉLESTE": "celestial",
       "ARME LUNAIRE": "moonweapon",
-      "TRANSFIGURÉ": "ascended"
+      "TRANSFIGURÉ": "ascended",
+      "RÔDEUR": "lurker"
     }
   },
   "it_it": {
@@ -140,7 +145,8 @@
       "TESORO": "treasure",
       "CELESTIALE": "celestial",
       "ARMA LUNARE": "moonweapon",
-      "ASCESO": "ascended"
+      "ASCESO": "ascended",
+      "LURKER": "lurker"
     }
   },
   "ja_jp": {
@@ -164,7 +170,8 @@
       "トレジャー": "treasure",
       "天空": "celestial",
       "月授の武器": "moonweapon",
-      "超越者": "ascended"
+      "超越者": "ascended",
+      "潜伏者": "lurker"
     }
   },
   "ko_kr": {
@@ -188,7 +195,8 @@
       "보물": "treasure",
       "천상": "celestial",
       "달 무기": "moonweapon",
-      "초월체": "ascended"
+      "초월체": "ascended",
+      "잠복자": "lurker"
     }
   },
   "pl_pl": {
@@ -212,7 +220,8 @@
       "SKARB": "treasure",
       "ASTRALNY": "celestial",
       "KSIĘŻYCOWA BROŃ": "moonweapon",
-      "WYNIESIENI": "ascended"
+      "WYNIESIENI": "ascended",
+      "OBSERWATOR": "lurker"
     }
   },
   "pt_br": {
@@ -236,7 +245,8 @@
       "TESOURO": "treasure",
       "CELESTIAL": "celestial",
       "ARMA LUNARI": "moonweapon",
-      "ASCENDENTE": "ascended"
+      "ASCENDENTE": "ascended",
+      "ESPREITADOR": "lurker"
     }
   },
   "ru_ru": {
@@ -260,7 +270,8 @@
       "СОКРОВИЩЕ": "treasure",
       "ТВОРЕНИЕ НЕБЕС": "celestial",
       "ЛУННОЕ ОРУЖИЕ": "moonweapon",
-      "ВОЗНЕСШИЕСЯ": "ascended"
+      "ВОЗНЕСШИЕСЯ": "ascended",
+      "ОХОТНИК": "lurker"
     }
   },
   "th_th": {
@@ -284,7 +295,8 @@
       "ขุมทรัพย์": "treasure",
       "สรวงสวรรค์": "celestial",
       "อาวุธจันทรา": "moonweapon",
-      "พลังเทพ": "ascended"
+      "พลังเทพ": "ascended",
+      "ผู้ดักซุ่ม": "lurker"
     }
   },
   "tr_tr": {
@@ -308,7 +320,8 @@
       "HAZİNE": "treasure",
       "SEMAVİ": "celestial",
       "AY SİLAHI": "moonweapon",
-      "YÜKSELMİŞ": "ascended"
+      "YÜKSELMİŞ": "ascended",
+      "PUSUCU": "lurker"
     }
   },
   "vi_vn": {
@@ -332,7 +345,8 @@
       "KHO BÁU": "treasure",
       "THƯỢNG GIỚI": "celestial",
       "VŨ KHÍ NGUYỆT THẠCH": "moonweapon",
-      "THỂ THĂNG HOA": "ascended"
+      "THỂ THĂNG HOA": "ascended",
+      "KẺ RÌNH RẬP": "lurker"
     }
   },
   "zh_tw": {
@@ -356,7 +370,8 @@
       "寳藏": "treasure",
       "天界": "celestial",
       "月之武器": "moonweapon",
-      "飛昇者": "ascended"
+      "飛昇者": "ascended",
+      "潛伏者": "lurker"
     }
   }
 }
