@@ -22,6 +22,11 @@
       "name": "Empires of the Ascended",
       "url": "https://dd.b.pvp.net/latest/set4-lite-{0}.zip",
       "folder": "set4"
+    },
+    {
+      "name": "Beyond the Bandlewood",
+      "url": "https://dd.b.pvp.net/latest/set5-lite-{0}.zip",
+      "folder": "set5"
     }
   ]
 }
