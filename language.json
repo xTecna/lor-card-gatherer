@@ -21,7 +21,9 @@
       "HIMMLISCH": "celestial",
       "MONDWAFFE": "moonweapon",
       "AUFGESTIEGEN": "ascended",
-      "LAUERND": "lurker"
+      "LAUERND": "lurker",
+      "YORDLE": "yordle",
+      "FEE": "fae"
     }
   },
   "en_us": {
@@ -46,7 +48,9 @@
       "CELESTIAL": "celestial",
       "MOON WEAPON": "moonweapon",
       "ASCENDED": "ascended",
-      "LURKER": "lurker"
+      "LURKER": "lurker",
+      "YORDLE": "yordle",
+      "FAE": "fae"
     }
   },
   "es_es": {
@@ -71,7 +75,9 @@
       "CELESTIAL": "celestial",
       "ARMA LUNAR": "moonweapon",
       "ASCENDIDO": "ascended",
-      "ACECHANTE": "lurker"
+      "ACECHANTE": "lurker",
+      "YORDLE": "yordle",
+      "HADA": "fae"
     }
   },
   "es_mx": {
@@ -96,7 +102,9 @@
       "CELESTIAL": "celestial",
       "ARMA LUNAR": "moonweapon",
       "ASCENDIDO": "ascended",
-      "ACECHANTE": "lurker"
+      "ACECHANTE": "lurker",
+      "YORDLE": "yordle",
+      "FEÉRICO": "fae"
     }
   },
   "fr_fr": {
@@ -121,7 +129,9 @@
       "CÉLESTE": "celestial",
       "ARME LUNAIRE": "moonweapon",
       "TRANSFIGURÉ": "ascended",
-      "RÔDEUR": "lurker"
+      "RÔDEUR": "lurker",
+      "YORDLE": "yordle",
+      "FÉE": "fae"
     }
   },
   "it_it": {
@@ -146,7 +156,9 @@
       "CELESTIALE": "celestial",
       "ARMA LUNARE": "moonweapon",
       "ASCESO": "ascended",
-      "LURKER": "lurker"
+      "LURKER": "lurker",
+      "YORDLE": "yordle",
+      "FATINA": "fae"
     }
   },
   "ja_jp": {
@@ -171,7 +183,9 @@
       "天空": "celestial",
       "月授の武器": "moonweapon",
       "超越者": "ascended",
-      "潜伏者": "lurker"
+      "潜伏者": "lurker",
+      "ヨードル": "yordle",
+      "妖精": "fae"
     }
   },
   "ko_kr": {
@@ -196,7 +210,9 @@
       "천상": "celestial",
       "달 무기": "moonweapon",
       "초월체": "ascended",
-      "잠복자": "lurker"
+      "잠복자": "lurker",
+      "요들": "yordle",
+      "요정": "fae"
     }
   },
   "pl_pl": {
@@ -221,7 +237,9 @@
       "ASTRALNY": "celestial",
       "KSIĘŻYCOWA BROŃ": "moonweapon",
       "WYNIESIENI": "ascended",
-      "OBSERWATOR": "lurker"
+      "OBSERWATOR": "lurker",
+      "YORDLE": "yordle",
+      "WRÓŻKA": "fae"
     }
   },
   "pt_br": {
@@ -246,7 +264,9 @@
       "CELESTIAL": "celestial",
       "ARMA LUNARI": "moonweapon",
       "ASCENDENTE": "ascended",
-      "ESPREITADOR": "lurker"
+      "ESPREITADOR": "lurker",
+      "YORDLE": "yordle",
+      "FADA": "fae"
     }
   },
   "ru_ru": {
@@ -271,7 +291,9 @@
       "ТВОРЕНИЕ НЕБЕС": "celestial",
       "ЛУННОЕ ОРУЖИЕ": "moonweapon",
       "ВОЗНЕСШИЕСЯ": "ascended",
-      "ОХОТНИК": "lurker"
+      "ОХОТНИК": "lurker",
+      "ЙОРДЛ": "yordle",
+      "ФАЭ": "fae"
     }
   },
   "th_th": {
@@ -296,7 +318,9 @@
       "สรวงสวรรค์": "celestial",
       "อาวุธจันทรา": "moonweapon",
       "พลังเทพ": "ascended",
-      "ผู้ดักซุ่ม": "lurker"
+      "ผู้ดักซุ่ม": "lurker",
+      "ยอร์เดิล": "yordle",
+      "แฟรี่": "fae"
     }
   },
   "tr_tr": {
@@ -321,7 +345,9 @@
       "SEMAVİ": "celestial",
       "AY SİLAHI": "moonweapon",
       "YÜKSELMİŞ": "ascended",
-      "PUSUCU": "lurker"
+      "PUSUCU": "lurker",
+      "YORDLE": "yordle",
+      "PERİ": "fae"
     }
   },
   "vi_vn": {
@@ -346,7 +372,9 @@
       "THƯỢNG GIỚI": "celestial",
       "VŨ KHÍ NGUYỆT THẠCH": "moonweapon",
       "THỂ THĂNG HOA": "ascended",
-      "KẺ RÌNH RẬP": "lurker"
+      "KẺ RÌNH RẬP": "lurker",
+      "YORDLE": "yordle",
+      "TINH LINH": "fae"
     }
   },
   "zh_tw": {
@@ -371,7 +399,9 @@
       "天界": "celestial",
       "月之武器": "moonweapon",
       "飛昇者": "ascended",
-      "潛伏者": "lurker"
+      "潛伏者": "lurker",
+      "約德爾人": "yordle",
+      "妖精": "fae"
     }
   }
 }

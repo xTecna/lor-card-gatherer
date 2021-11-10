@@ -83,6 +83,7 @@ def getDataFromCardSet(card_set, dictionary, champion_names):
     shutil.rmtree(card_set.folder, ignore_errors=True)
 
 def registerCard(dictionary, champion_names, card):
+    regionRefs = [x.lower() for x in card['regionRefs']]
     nameRef = champion_names[card['cardCode']] if card['cardCode'] in champion_names else ''
     subtypes = [dictionary['subtypes'][x] for x in card['subtypes']]
     supertype = dictionary['types'][card['supertype']] if card['supertype'] != '' else ''
@@ -92,7 +93,7 @@ def registerCard(dictionary, champion_names, card):
         'associatedCards': card['associatedCardRefs'],
         'artPath': [x['gameAbsolutePath'] for x in card['assets']],
         'fullArtPath': [x['fullAbsolutePath'] for x in card['assets']],
-        'region': card['regionRef'].lower(),
+        'regions': regionRefs,
         'attack': card['attack'],
         'cost': card['cost'],
         'health': card['health'],
