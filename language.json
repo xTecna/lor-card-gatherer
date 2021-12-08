@@ -23,7 +23,8 @@
       "AUFGESTIEGEN": "ascended",
       "LAUERND": "lurker",
       "YORDLE": "yordle",
-      "FEE": "fae"
+      "FEE": "fae",
+      "MECHA-YORDLE": "mechayordle"
     }
   },
   "en_us": {
@@ -50,7 +51,8 @@
       "ASCENDED": "ascended",
       "LURKER": "lurker",
       "YORDLE": "yordle",
-      "FAE": "fae"
+      "FAE": "fae",
+      "MECHA-YORDLE": "mechayordle"
     }
   },
   "es_es": {
@@ -77,7 +79,8 @@
       "ASCENDIDO": "ascended",
       "ACECHANTE": "lurker",
       "YORDLE": "yordle",
-      "HADA": "fae"
+      "HADA": "fae",
+      "YORDLE MECHA": "mechayordle"
     }
   },
   "es_mx": {
@@ -104,7 +107,8 @@
       "ASCENDIDO": "ascended",
       "ACECHANTE": "lurker",
       "YORDLE": "yordle",
-      "FEÉRICO": "fae"
+      "FEÉRICO": "fae",
+      "YORDLE MECHA": "mechayordle"
     }
   },
   "fr_fr": {
@@ -131,7 +135,8 @@
       "TRANSFIGURÉ": "ascended",
       "RÔDEUR": "lurker",
       "YORDLE": "yordle",
-      "FÉE": "fae"
+      "FÉE": "fae",
+      "MECHA-YORDLE": "mechayordle"
     }
   },
   "it_it": {
@@ -158,7 +163,9 @@
       "ASCESO": "ascended",
       "LURKER": "lurker",
       "YORDLE": "yordle",
-      "FATINA": "fae"
+      "FATINA": "fae",
+      "FATATO": "fae",
+      "MECHAYORDLE": "mechayordle"
     }
   },
   "ja_jp": {
@@ -185,7 +192,8 @@
       "超越者": "ascended",
       "潜伏者": "lurker",
       "ヨードル": "yordle",
-      "妖精": "fae"
+      "妖精": "fae",
+      "メカヨードル": "mechayordle"
     }
   },
   "ko_kr": {
@@ -212,7 +220,8 @@
       "초월체": "ascended",
       "잠복자": "lurker",
       "요들": "yordle",
-      "요정": "fae"
+      "요정": "fae",
+      "메크 요들": "mechayordle"
     }
   },
   "pl_pl": {
@@ -239,7 +248,8 @@
       "WYNIESIENI": "ascended",
       "OBSERWATOR": "lurker",
       "YORDLE": "yordle",
-      "WRÓŻKA": "fae"
+      "WRÓŻKA": "fae",
+      "MECHA-YORDLE": "mechayordle"
     }
   },
   "pt_br": {
@@ -266,7 +276,8 @@
       "ASCENDENTE": "ascended",
       "ESPREITADOR": "lurker",
       "YORDLE": "yordle",
-      "FADA": "fae"
+      "FADA": "fae",
+      "MECH YORDLE": "mechayordle"
     }
   },
   "ru_ru": {
@@ -293,7 +304,8 @@
       "ВОЗНЕСШИЕСЯ": "ascended",
       "ОХОТНИК": "lurker",
       "ЙОРДЛ": "yordle",
-      "ФАЭ": "fae"
+      "ФАЭ": "fae",
+      "ЙОРДЛ-ПИЛОТ": "mechayordle"
     }
   },
   "th_th": {
@@ -320,7 +332,8 @@
       "พลังเทพ": "ascended",
       "ผู้ดักซุ่ม": "lurker",
       "ยอร์เดิล": "yordle",
-      "แฟรี่": "fae"
+      "แฟรี่": "fae",
+      "ยอร์เดิลจักรกล": "mechayordle"
     }
   },
   "tr_tr": {
@@ -347,7 +360,8 @@
       "YÜKSELMİŞ": "ascended",
       "PUSUCU": "lurker",
       "YORDLE": "yordle",
-      "PERİ": "fae"
+      "PERİ": "fae",
+      "MEKA-YORDLE": "mechayordle"
     }
   },
   "vi_vn": {
@@ -374,7 +388,8 @@
       "THỂ THĂNG HOA": "ascended",
       "KẺ RÌNH RẬP": "lurker",
       "YORDLE": "yordle",
-      "TINH LINH": "fae"
+      "TINH LINH": "fae",
+      "YORDLE MÁY": "mechayordle"
     }
   },
   "zh_tw": {
@@ -401,7 +416,8 @@
       "飛昇者": "ascended",
       "潛伏者": "lurker",
       "約德爾人": "yordle",
-      "妖精": "fae"
+      "妖精": "fae",
+      "機甲約德爾": "mechayordle"
     }
   }
 }

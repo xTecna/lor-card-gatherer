@@ -1,7 +1,8 @@
 {
-  "output_folder": "[FULL PATH]",
+  "output_folder": "D:\\Usuários\\Raquel\\Documentos\\Workspace\\lor-cards",
   "images_folder": "img",
   "output_file": "{0}.json",
+  "include_images": "no",
   "card_sets": [
     {
       "name": "Foundations",
