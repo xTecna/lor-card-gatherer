@@ -10,6 +10,7 @@ import shutil
 import json
 import io
 import os
+import re
 
 card_data = []
 
@@ -36,6 +37,7 @@ class Config:
         self.output_file = os.path.join(
             self.output_folder, config['output_file'])
         self.include_images = config['include_images'] == 'yes'
+        self.included_languages = config['included_languages']
 
         self.card_sets = config['card_sets']
         self.dictionary = config_language
@@ -99,14 +101,19 @@ def getDataFromCardSet(card_set, include_images, dictionary, champion_names):
     shutil.rmtree(card_set.folder, ignore_errors=True)
 
 
+def removeTags(text):
+    return re.sub('<[^>]*>', '', text)
+
+
 def registerCard(dictionary, champion_names, card):
     regionRefs = [x.lower() for x in card['regionRefs']]
     nameRef = champion_names[card['cardCode']
                              ] if card['cardCode'] in champion_names else ''
-    subtypes = [dictionary['subtypes'][x] for x in card['subtypes']]
-    supertype = dictionary['types'][card['supertype']
+    subtypes = [dictionary['subtypes']
+                [removeTags(x)] for x in card['subtypes']]
+    supertype = dictionary['types'][removeTags(card['supertype'])
                                     ] if card['supertype'] != '' else ''
-    cardType = dictionary['types'][card['type']]
+    cardType = dictionary['types'][removeTags(card['type'])]
 
     return {
         'associatedCards': card['associatedCardRefs'],
@@ -137,7 +144,7 @@ def registerCard(dictionary, champion_names, card):
 config = setConfig()
 if (config.include_images and not os.path.isdir(config.images_folder)):
     os.mkdir(config.images_folder)
-for language in config.dictionary:
+for language in config.included_languages:
     card_data = []
     card_set_object = None
     for card_set in config.card_sets:
