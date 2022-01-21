@@ -1,5 +1,5 @@
 {
-  "output_folder": "[PATH]",
+  "output_folder": "[YOUR PATH]",
   "images_folder": "img",
   "output_file": "{0}.json",
   "include_images": "no",
