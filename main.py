@@ -25,7 +25,7 @@ class CardSet:
         self.images_path = os.path.join(os.path.dirname(
             __file__), self.folder, self.language, 'img', 'cards')
         self.file_path = os.path.join(os.path.dirname(
-            __file__), self.folder, self.language, 'data', '{0}-{1}.json'.format(self.folder, self.language))
+            __file__), self.folder, self.language, 'data', f'{self.folder}-{self.language}.json')
         self.output_folder = os.path.join(images_folder, self.language)
 
 
@@ -64,19 +64,19 @@ def setConfig():
 
 
 def getDataFromCardSet(card_set, include_images, dictionary, champion_names):
-    file_zip = getPath('{0}.zip'.format(card_set.folder))
+    file_zip = getPath(f'{card_set.folder}.zip')
 
     urllib.request.urlretrieve(card_set.url, file_zip)
-    print('Files from set {0} downloaded successfully, resulting in file {1}.'.format(
-        card_set.name, file_zip))
+    print(
+        f'Files from set {card_set.name} downloaded successfully, resulting in file {file_zip}.')
 
     with ZipFile(file_zip, 'r') as zipObj:
         if(include_images):
             zipObj.extractall(getPath(card_set.folder))
         else:
-            zipObj.extract('{0}/data/{1}-{0}.json'.format(card_set.language,
-                           card_set.folder), getPath(card_set.folder))
-    print('Extraction of {0} finished.'.format(file_zip))
+            zipObj.extract(
+                f'{card_set.language}/data/{card_set.folder}-{card_set.language}.json', getPath(card_set.folder))
+    print(f'Extraction of {file_zip} finished.')
 
     os.remove(file_zip)
 
@@ -84,7 +84,7 @@ def getDataFromCardSet(card_set, include_images, dictionary, champion_names):
         fileData = json.load(file_json)
         for data in fileData:
             card_data.append(registerCard(dictionary, champion_names, data))
-    print('Data from cards from set {0} obtained.'.format(card_set.name))
+    print(f'Data from cards from set {card_set.name} obtained.')
 
     if (include_images):
         if (not os.path.isdir(card_set.output_folder)):
@@ -95,8 +95,8 @@ def getDataFromCardSet(card_set, include_images, dictionary, champion_names):
             source = os.path.join(card_set.images_path, image)
             destination = os.path.join(card_set.output_folder, image)
             shutil.move(source, destination)
-        print('All card images from set {0} were transferred to folder {1}.'.format(
-            card_set.name, card_set.output_folder))
+        print(
+            f'All card images from set {card_set.name} were transferred to folder {card_set.output_folder}.')
 
     shutil.rmtree(card_set.folder, ignore_errors=True)
 
@@ -149,15 +149,19 @@ for language in config.included_languages:
     card_set_object = None
     for card_set in config.card_sets:
         card_set_object = CardSet(config.images_folder, card_set, language)
-        print('Downloading files from set {0} in language {1}. This step may take some minutes.'.format(
-            card_set_object.name, language))
+        print(
+            f'Downloading files from set {card_set_object.name} in language {language}. This step may take some minutes.')
         getDataFromCardSet(
             card_set_object, config.include_images, config.dictionary[language], config.champion_names)
     output_file = config.output_file.format(language)
     with io.open(output_file, 'w', encoding='utf8') as output:
         output.write(json.dumps(card_data, ensure_ascii=False))
-    print('All data collected from set {0} in language {1}.'.format(
-        card_set_object.name, language))
+    print(
+        f'All data collected from set {card_set_object.name} in language {language}.')
 
-print('The script finished sucessfully. All data can be found at file {0}.{1}'.format(
-    config.output_file, ' All card images are at folder {0}.'.format(config.images_folder) if config.include_images else ''))
+print(
+    f'The script finished sucessfully. All data can be found at file {config.output_file}.', end='')
+if config.include_images:
+    print(f' All card images are at folder {config.images_folder}.')
+else:
+    print('')
