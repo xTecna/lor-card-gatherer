@@ -14,9 +14,9 @@
     "ko_kr",
     "pl_pl",
     "pt_br",
-    "ru_ru",
     "th_th",
     "tr_tr",
+    "ru_ru",
     "vi_vn",
     "zh_tw"
   ],
@@ -45,6 +45,11 @@
       "name": "Beyond the Bandlewood",
       "url": "https://dd.b.pvp.net/latest/set5-lite-{0}.zip",
       "folder": "set5"
+    },
+    {
+      "name": "Worldwalker",
+      "url": "https://dd.b.pvp.net/latest/set6-lite-{0}.zip",
+      "folder": "set6"
     }
   ]
 }
