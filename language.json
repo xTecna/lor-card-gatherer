@@ -4,6 +4,7 @@
       "Champion": "champion",
       "Einheit": "follower",
       "Zauber": "spell",
+      "Ausrüstung": "equipment",
       "Wahrzeichen": "landmark",
       "Fertigkeit": "skill",
       "Falle": "trap"
@@ -24,7 +25,10 @@
       "LAUERND": "lurker",
       "YORDLE": "yordle",
       "FEE": "fae",
-      "MECHA-YORDLE": "mechayordle"
+      "MECHA-YORDLE": "mechayordle",
+      "DÜSTERER": "darkin",
+      "KULTIST": "cultist",
+      "WAFFENMEISTER": "weaponmaster"
     }
   },
   "en_us": {
@@ -32,6 +36,7 @@
       "Champion": "champion",
       "Unit": "follower",
       "Spell": "spell",
+      "Equipment": "equipment",
       "Landmark": "landmark",
       "Ability": "skill",
       "Trap": "trap"
@@ -52,7 +57,10 @@
       "LURKER": "lurker",
       "YORDLE": "yordle",
       "FAE": "fae",
-      "MECHA-YORDLE": "mechayordle"
+      "MECHA-YORDLE": "mechayordle",
+      "DARKIN": "darkin",
+      "CULTIST": "cultist",
+      "WEAPONMASTER": "weaponmaster"
     }
   },
   "es_es": {
@@ -60,6 +68,7 @@
       "Campeón": "champion",
       "Unidad": "follower",
       "Hechizo": "spell",
+      "Equipamiento": "equipment",
       "Hito": "landmark",
       "Habilidad": "skill",
       "Trampa": "trap"
@@ -80,7 +89,10 @@
       "ACECHANTE": "lurker",
       "YORDLE": "yordle",
       "HADA": "fae",
-      "YORDLE MECHA": "mechayordle"
+      "YORDLE MECHA": "mechayordle",
+      "OSCUROS": "darkin",
+      "SECTARIA": "cultist",
+      "MAESTRO DE ARMAS": "weaponmaster"
     }
   },
   "es_mx": {
@@ -88,6 +100,7 @@
       "Campeón": "champion",
       "Unidad": "follower",
       "Hechizo": "spell",
+      "Equipo": "equipment",
       "Hito": "landmark",
       "Habilidad": "skill",
       "Trampa": "trap"
@@ -108,7 +121,10 @@
       "ACECHANTE": "lurker",
       "YORDLE": "yordle",
       "FEÉRICO": "fae",
-      "YORDLE MECHA": "mechayordle"
+      "YORDLE MECHA": "mechayordle",
+      "DARKIN": "darkin",
+      "CULTISTA": "cultist",
+      "MAESTRO DE ARMAS": "weaponmaster"
     }
   },
   "fr_fr": {
@@ -116,6 +132,7 @@
       "Champion": "champion",
       "Unité": "follower",
       "Sort": "spell",
+      "Équipement": "equipment",
       "Site": "landmark",
       "Compétence": "skill",
       "Piège": "trap"
@@ -136,7 +153,10 @@
       "RÔDEUR": "lurker",
       "YORDLE": "yordle",
       "FÉE": "fae",
-      "MECHA-YORDLE": "mechayordle"
+      "MECHA-YORDLE": "mechayordle",
+      "DARKIN": "darkin",
+      "ZÉLOTE": "cultist",
+      "EXPERT EN ARMES": "weaponmaster"
     }
   },
   "it_it": {
@@ -144,6 +164,7 @@
       "Campione": "champion",
       "Unità": "follower",
       "Incantesimo": "spell",
+      "Equipaggiamento": "equipment",
       "Monumento": "landmark",
       "Abilità": "skill",
       "Trappola": "trap"
@@ -165,7 +186,10 @@
       "YORDLE": "yordle",
       "FATINA": "fae",
       "FATATO": "fae",
-      "MECHAYORDLE": "mechayordle"
+      "MECHAYORDLE": "mechayordle",
+      "DARKIN": "darkin",
+      "CULTISTA": "cultist",
+      "MAESTRO D'ARMI": "weaponmaster"
     }
   },
   "ja_jp": {
@@ -173,6 +197,7 @@
       "チャンピオン": "champion",
       "ユニット": "follower",
       "スペル": "spell",
+      "武具": "equipament",
       "ランドマーク": "landmark",
       "スキル": "skill",
       "トラップ": "trap"
@@ -193,7 +218,10 @@
       "潜伏者": "lurker",
       "ヨードル": "yordle",
       "妖精": "fae",
-      "メカヨードル": "mechayordle"
+      "メカヨードル": "mechayordle",
+      "ダーキン": "darkin",
+      "カルティスト": "cultist",
+      "武器使い": "weaponmaster"
     }
   },
   "ko_kr": {
@@ -201,6 +229,7 @@
       "챔피언": "champion",
       "유닛": "follower",
       "주문": "spell",
+      "장비": "equipment",
       "명소": "landmark",
       "스킬": "skill",
       "함정": "trap"
@@ -221,7 +250,10 @@
       "잠복자": "lurker",
       "요들": "yordle",
       "요정": "fae",
-      "메크 요들": "mechayordle"
+      "메크 요들": "mechayordle",
+      "다르킨": "darkin",
+      "광신도": "cultist",
+      "무기의 대가": "weaponmaster"
     }
   },
   "pl_pl": {
@@ -229,6 +261,7 @@
       "Bohater": "champion",
       "Jednostka": "follower",
       "Zaklęcie": "spell",
+      "Wyposażenie": "equipment",
       "Lokacja": "landmark",
       "Umiejętność": "skill",
       "Pułapka": "trap"
@@ -249,7 +282,10 @@
       "OBSERWATOR": "lurker",
       "YORDLE": "yordle",
       "WRÓŻKA": "fae",
-      "MECHA-YORDLE": "mechayordle"
+      "MECHA-YORDLE": "mechayordle",
+      "DARKIN": "darkin",
+      "KULTYSTA": "cultist",
+      "WIRTUOZ BRONI": "weaponmaster"
     }
   },
   "pt_br": {
@@ -257,6 +293,7 @@
       "Campeão": "champion",
       "Unidade": "follower",
       "Feitiço": "spell",
+      "Equipamento": "equipment",
       "Monumento": "landmark",
       "Habilidade": "skill",
       "Armadilha": "trap"
@@ -277,7 +314,10 @@
       "ESPREITADOR": "lurker",
       "YORDLE": "yordle",
       "FADA": "fae",
-      "MECH YORDLE": "mechayordle"
+      "MECH YORDLE": "mechayordle",
+      "DARKIN": "darkin",
+      "CULTISTA": "cultist",
+      "MESTRE DE ARMAS": "weaponmaster"
     }
   },
   "ru_ru": {
@@ -285,6 +325,7 @@
       "Чемпион": "champion",
       "Боец": "follower",
       "Заклинание": "spell",
+      "Снаряжение": "equipment",
       "Место силы": "landmark",
       "Способность": "skill",
       "Ловушка": "trap"
@@ -305,7 +346,10 @@
       "ОХОТНИК": "lurker",
       "ЙОРДЛ": "yordle",
       "ФАЭ": "fae",
-      "ЙОРДЛ-ПИЛОТ": "mechayordle"
+      "ЙОРДЛ-ПИЛОТ": "mechayordle",
+      "ДАРКИН": "darkin",
+      "КУЛЬТИСТ": "cultist",
+      "ОРУЖЕЙНИК": "weaponmaster"
     }
   },
   "th_th": {
@@ -313,6 +357,7 @@
       "แชมเปี้ยน": "champion",
       "ยูนิต": "follower",
       "เวท": "spell",
+      "อุปกรณ์": "equipment",
       "แลนด์มาร์ค": "landmark",
       "ความสามารถ": "skill",
       "กับดัก": "trap"
@@ -333,7 +378,10 @@
       "ผู้ดักซุ่ม": "lurker",
       "ยอร์เดิล": "yordle",
       "แฟรี่": "fae",
-      "ยอร์เดิลจักรกล": "mechayordle"
+      "ยอร์เดิลจักรกล": "mechayordle",
+      "ดาร์คิน": "darkin",
+      "ลัทธิ": "cultist",
+      "ปรมาจารย์อาวุธ": "weaponmaster"
     }
   },
   "tr_tr": {
@@ -341,6 +389,7 @@
       "Şampiyon": "champion",
       "Birim": "follower",
       "Büyü": "spell",
+      "Ekipman": "equipment",
       "Yer": "landmark",
       "Yetenek": "skill",
       "Tuzak": "trap"
@@ -361,7 +410,10 @@
       "PUSUCU": "lurker",
       "YORDLE": "yordle",
       "PERİ": "fae",
-      "MEKA-YORDLE": "mechayordle"
+      "MEKA-YORDLE": "mechayordle",
+      "DARKİN": "darkin",
+      "TARİKATÇI": "cultist",
+      "SİLAH ÜSTADI": "weaponmaster"
     }
   },
   "vi_vn": {
@@ -369,6 +421,7 @@
       "Anh hùng": "champion",
       "Bài quân": "follower",
       "Bài phép": "spell",
+      "Trang Bị": "equipment",
       "Địa Danh": "landmark",
       "Kỹ năng": "skill",
       "Bài Bẫy": "trap"
@@ -389,7 +442,10 @@
       "KẺ RÌNH RẬP": "lurker",
       "YORDLE": "yordle",
       "TINH LINH": "fae",
-      "YORDLE MÁY": "mechayordle"
+      "YORDLE MÁY": "mechayordle",
+      "DARKIN": "darkin",
+      "KẺ MỘ ĐẠO": "cultist",
+      "BẬC THẦY VŨ KHÍ": "weaponmaster"
     }
   },
   "zh_tw": {
@@ -397,6 +453,7 @@
       "英雄": "champion",
       "單位": "follower",
       "法術": "spell",
+      "裝備": "equipment",
       "地標": "landmark",
       "技能": "skill",
       "陷阱": "trap"
@@ -417,7 +474,10 @@
       "潛伏者": "lurker",
       "約德爾人": "yordle",
       "妖精": "fae",
-      "機甲約德爾": "mechayordle"
+      "機甲約德爾": "mechayordle",
+      "冥血族": "darkin",
+      "邪教徒": "cultist",
+      "武器大師": "weaponmaster"
     }
   }
 }
