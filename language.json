@@ -28,7 +28,8 @@
       "MECHA-YORDLE": "mechayordle",
       "DÜSTERER": "darkin",
       "KULTIST": "cultist",
-      "WAFFENMEISTER": "weaponmaster"
+      "WAFFENMEISTER": "weaponmaster",
+      "WELTRUNE": "worldrune"
     }
   },
   "en_us": {
@@ -60,7 +61,8 @@
       "MECHA-YORDLE": "mechayordle",
       "DARKIN": "darkin",
       "CULTIST": "cultist",
-      "WEAPONMASTER": "weaponmaster"
+      "WEAPONMASTER": "weaponmaster",
+      "WORLD RUNE": "worldrune"
     }
   },
   "es_es": {
@@ -92,7 +94,8 @@
       "YORDLE MECHA": "mechayordle",
       "OSCUROS": "darkin",
       "SECTARIA": "cultist",
-      "MAESTRO DE ARMAS": "weaponmaster"
+      "MAESTRO DE ARMAS": "weaponmaster",
+      "RUNA GEOGÉNICA": "worldrune"
     }
   },
   "es_mx": {
@@ -124,7 +127,8 @@
       "YORDLE MECHA": "mechayordle",
       "DARKIN": "darkin",
       "CULTISTA": "cultist",
-      "MAESTRO DE ARMAS": "weaponmaster"
+      "MAESTRO DE ARMAS": "weaponmaster",
+      "RUNA DEL MUNDO": "worldrune"
     }
   },
   "fr_fr": {
@@ -156,7 +160,8 @@
       "MECHA-YORDLE": "mechayordle",
       "DARKIN": "darkin",
       "ZÉLOTE": "cultist",
-      "EXPERT EN ARMES": "weaponmaster"
+      "EXPERT EN ARMES": "weaponmaster",
+      "RUNE TELLURIQUE": "worldrune"
     }
   },
   "it_it": {
@@ -189,7 +194,8 @@
       "MECHAYORDLE": "mechayordle",
       "DARKIN": "darkin",
       "CULTISTA": "cultist",
-      "MAESTRO D'ARMI": "weaponmaster"
+      "MAESTRO D'ARMI": "weaponmaster",
+      "RUNA TERRENA": "worldrune"
     }
   },
   "ja_jp": {
@@ -221,7 +227,8 @@
       "メカヨードル": "mechayordle",
       "ダーキン": "darkin",
       "カルティスト": "cultist",
-      "武器使い": "weaponmaster"
+      "武器使い": "weaponmaster",
+      "ワールドルーン": "worldrune"
     }
   },
   "ko_kr": {
@@ -253,7 +260,8 @@
       "메크 요들": "mechayordle",
       "다르킨": "darkin",
       "광신도": "cultist",
-      "무기의 대가": "weaponmaster"
+      "무기의 대가": "weaponmaster",
+      "세계 룬": "worldrune"
     }
   },
   "pl_pl": {
@@ -285,7 +293,8 @@
       "MECHA-YORDLE": "mechayordle",
       "DARKIN": "darkin",
       "KULTYSTA": "cultist",
-      "WIRTUOZ BRONI": "weaponmaster"
+      "WIRTUOZ BRONI": "weaponmaster",
+      "RUNA ŚWIATA": "worldrune"
     }
   },
   "pt_br": {
@@ -317,7 +326,8 @@
       "MECH YORDLE": "mechayordle",
       "DARKIN": "darkin",
       "CULTISTA": "cultist",
-      "MESTRE DE ARMAS": "weaponmaster"
+      "MESTRE DE ARMAS": "weaponmaster",
+      "RUNA GLOBAL": "worldrune"
     }
   },
   "ru_ru": {
@@ -349,7 +359,8 @@
       "ЙОРДЛ-ПИЛОТ": "mechayordle",
       "ДАРКИН": "darkin",
       "КУЛЬТИСТ": "cultist",
-      "ОРУЖЕЙНИК": "weaponmaster"
+      "МАСТЕР ОРУЖИЯ": "weaponmaster",
+      "МИРОВАЯ РУНА": "worldrune"
     }
   },
   "th_th": {
@@ -381,7 +392,8 @@
       "ยอร์เดิลจักรกล": "mechayordle",
       "ดาร์คิน": "darkin",
       "ลัทธิ": "cultist",
-      "ปรมาจารย์อาวุธ": "weaponmaster"
+      "ปรมาจารย์อาวุธ": "weaponmaster",
+      "เวิลด์รูน": "worldrune"
     }
   },
   "tr_tr": {
@@ -413,7 +425,8 @@
       "MEKA-YORDLE": "mechayordle",
       "DARKİN": "darkin",
       "TARİKATÇI": "cultist",
-      "SİLAH ÜSTADI": "weaponmaster"
+      "SİLAH ÜSTADI": "weaponmaster",
+      "DÜNYA RÜNÜ": "worldrune"
     }
   },
   "vi_vn": {
@@ -445,7 +458,8 @@
       "YORDLE MÁY": "mechayordle",
       "DARKIN": "darkin",
       "KẺ MỘ ĐẠO": "cultist",
-      "BẬC THẦY VŨ KHÍ": "weaponmaster"
+      "BẬC THẦY VŨ KHÍ": "weaponmaster",
+      "CỔ NGỮ THẾ GIỚI": "worldrune"
     }
   },
   "zh_tw": {
@@ -477,7 +491,8 @@
       "機甲約德爾": "mechayordle",
       "冥血族": "darkin",
       "邪教徒": "cultist",
-      "武器大師": "weaponmaster"
+      "武器大師": "weaponmaster",
+      "世界符文": "worldrune"
     }
   }
 }
