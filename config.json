@@ -55,6 +55,11 @@
       "name": "Awakening",
       "url": "https://dd.b.pvp.net/latest/set6cde-lite-{0}.zip",
       "folder": "set6cde"
+    },
+    {
+      "name": "Glory in Navori",
+      "url": "https://dd.b.pvp.net/latest/set7-lite-{0}.zip",
+      "folder": "set7"
     }
   ]
 }

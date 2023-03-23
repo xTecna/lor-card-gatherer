@@ -127,7 +127,7 @@ def registerCard(dictionary, origin_lists, champion_names, card):
                                     ] if card['supertype'] != '' else ''
     cardType = dictionary['types'][removeTags(card['type'])]
 
-    return {
+    cardData = {
         'associatedCards': card['associatedCardRefs'],
         'artPath': [x['gameAbsolutePath'] for x in card['assets']],
         'fullArtPath': [x['fullAbsolutePath'] for x in card['assets']],
@@ -152,6 +152,11 @@ def registerCard(dictionary, origin_lists, champion_names, card):
         'set': card['set'].lower(),
         'origin': getOrigins(origin_lists, cardCode)
     }
+
+    if 'formatRefs' in card:
+        cardData['formats'] = [x.lower() for x in card['formatRefs']]
+    
+    return cardData
 
 
 config = setConfig()
